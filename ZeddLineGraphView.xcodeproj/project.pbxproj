@@ -61,11 +61,11 @@
 				14222D92245050040078F317 /* AppDelegate.swift */,
 				14222D94245050040078F317 /* SceneDelegate.swift */,
 				14222D96245050040078F317 /* ViewController.swift */,
+				14222DA6245050100078F317 /* ZeddLineGraphView.swift */,
 				14222D98245050040078F317 /* Main.storyboard */,
 				14222D9B245050080078F317 /* Assets.xcassets */,
 				14222D9D245050080078F317 /* LaunchScreen.storyboard */,
 				14222DA0245050080078F317 /* Info.plist */,
-				14222DA6245050100078F317 /* ZeddLineGraphView.swift */,
 			);
 			path = ZeddLineGraphView;
 			sourceTree = "<group>";
