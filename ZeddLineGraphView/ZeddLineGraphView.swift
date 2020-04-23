@@ -14,12 +14,14 @@ class ZeddLineGraphView: UIView {
     
     var graphPath: UIBezierPath!
     var zeroPath: UIBezierPath!
+    var animated: Bool!
     
     let graphLayer = CAShapeLayer()
 
-    init(frame: CGRect, values: [CGFloat]) {
+    init(frame: CGRect, values: [CGFloat], animated: Bool) {
         super.init(frame: frame)
         self.values = values
+        self.animated = animated
     }
     
     required init?(coder: NSCoder) {
@@ -54,13 +56,14 @@ class ZeddLineGraphView: UIView {
         
         let oldPath = self.zeroPath.cgPath
         let newPath = self.graphPath.cgPath
-                
-        let animation = CABasicAnimation(keyPath: "path")
-        animation.duration = 1
-        animation.fromValue = oldPath
-        animation.toValue = newPath
-        
+            
+        if self.animated {
+            let animation = CABasicAnimation(keyPath: "path")
+            animation.duration = 1
+            animation.fromValue = oldPath
+            animation.toValue = newPath
+            self.graphLayer.add(animation, forKey: "path")
+        }
         self.graphLayer.path = newPath
-        self.graphLayer.add(animation, forKey: "path")
     }
 }
